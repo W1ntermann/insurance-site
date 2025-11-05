@@ -1,0 +1,61 @@
+# Global Security Headers
+/*
+  X-Frame-Options: DENY
+  X-Content-Type-Options: nosniff
+  X-XSS-Protection: 1; mode=block
+  Referrer-Policy: strict-origin-when-cross-origin
+  Permissions-Policy: camera=(), microphone=(), geolocation=(), payment=()
+
+# CRITICAL FIX - Canonical redirects
+http://insurancerr.space/*
+  Location: https://www.insurancerr.space/:splat
+  301!
+
+http://www.insurancerr.space/*
+  Location: https://www.insurancerr.space/:splat
+  301!
+
+https://insurancerr.space/*
+  Location: https://www.insurancerr.space/:splat
+  301!
+
+# Homepage
+/
+  Cache-Control: public, max-age=3600
+  X-Robots-Tag: index, follow
+
+# Partners page - FIX 404 ERROR
+/partners
+  Cache-Control: public, max-age=3600
+  X-Robots-Tag: index, follow
+
+# Static assets
+/*.css
+  Cache-Control: public, max-age=31536000, immutable
+
+/*.js
+  Cache-Control: public, max-age=31536000, immutable
+
+/*.png
+  Cache-Control: public, max-age=31536000, immutable
+
+/*.jpg
+  Cache-Control: public, max-age=31536000, immutable
+
+/*.jpeg
+  Cache-Control: public, max-age=31536000, immutable
+
+# Sitemap
+/sitemap.xml
+  Content-Type: application/xml; charset=UTF-8
+  Cache-Control: public, max-age=3600
+  X-Robots-Tag: noindex
+
+/robots.txt
+  Cache-Control: public, max-age=86400
+  X-Robots-Tag: noindex
+
+# SPA fallback
+/*
+  !Content-Type: text/html
+  Cache-Control: public, max-age=3600

@@ -1,0 +1,10 @@
+# Force HTTPS redirect
+http://www.insurancerr.space/*    https://www.insurancerr.space/:splat    301!
+http://insurancerr.space/*       https://www.insurancerr.space/:splat    301!
+
+# Redirect old Netlify domain to new domain
+http://rr-insurance.netlify.app/*    https://www.insurancerr.space/:splat    301!
+https://rr-insurance.netlify.app/*   https://www.insurancerr.space/:splat    301!
+
+# SPA fallback for any other routes (serve index.html with 200)
+/*    /index.html    200

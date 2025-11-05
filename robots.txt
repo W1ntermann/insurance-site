@@ -1,0 +1,9 @@
+User-agent: *
+Allow: /
+Allow: /partners
+Disallow: /admin/
+Disallow: /private/
+
+Sitemap: https://www.insurancerr.space/sitemap.xml
+
+# Crawl-delay: 1
