@@ -118,6 +118,7 @@
     }
   ],
   "cleanUrls": true,
+  
   "trailingSlash": false
 
 }
