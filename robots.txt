@@ -1,20 +1,4 @@
 User-agent: *
-Allow: /$
+Allow: /
 
-# Заборонити індексацію всіх інших URL (наприклад, /about, /services тощо)
-Disallow: /
-
-# Але явно дозволити головну сторінку (важливо для SPA)
-Allow: /$
-
-# Закрити службові шляхи
-Disallow: /cgi-bin/
-Disallow: /tmp/
-Disallow: /private/
-
-# Вказати sitemap
 Sitemap: https://www.insurancerr.space/sitemap.xml
-
-# Заборонити індексацію з HTTP або без www (необов’язково, але додає надійності)
-# Google зазвичай ігнорує правила з інших хостів, але деякі парсери читають
-Host: https://www.insurancerr.space
