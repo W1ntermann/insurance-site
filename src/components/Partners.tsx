@@ -1,33 +1,63 @@
-const partners = [
-  { name: "ТАС", url: "https://www.insurancerr.space/tas.png" },
-  { name: "КНЯЖА", url: "https://www.insurancerr.space/knyaga.png" },
-  { name: "УСГ", url: "https://www.insurancerr.space/usg.jpeg" },
-  { name: "АРХ", url: "https://www.insurancerr.space/ARX_Ukraine.jpg" },
-];
+import React from 'react';
+import tasLogo from '../assets/tas.png';
+import knyagaLogo from '../assets/knyaga.png';
+import usgLogo from '../assets/usg.jpeg';
+import arxLogo from '../assets/ARX_Ukraine.jpg';
 
 const Partners = () => {
+  const partners = [
+    { 
+      name: "ТАС", 
+      logo: tasLogo,
+      alt: "ТАС - Страхова компанія партнер INSURANCE RR",
+      className: "tas-logo"
+    },
+    { 
+      name: "КНЯЖА", 
+      logo: knyagaLogo,
+      alt: "КНЯЖА - Страхова компанія партнер INSURANCE RR",
+      className: "knyaga-logo"
+    },
+    { 
+      name: "УСГ", 
+      logo: usgLogo,
+      alt: "УСГ - Українська страхова група партнер INSURANCE RR",
+      className: "usg-logo"
+    },
+    { 
+      name: "АРХ", 
+      logo: arxLogo,
+      alt: "АРХ - Страхова компанія партнер INSURANCE RR",
+      className: "arx-logo"
+    },
+  ];
+
   return (
-    <section id="partners" className="py-20 bg-section-light">
-      <div className="container mx-auto px-4">
-        <div className="text-center mb-12">
-          <h2 className="section-title">Наші партнери</h2>
+    <section id="partners" className="partners" role="region" aria-labelledby="partners-title">
+      <div className="container">
+        <div className="section-title">
+          <h2 id="partners-title">Наші партнери</h2>
         </div>
         
-        <p className="text-center text-lg text-muted-foreground mb-12 max-w-2xl mx-auto">
+        <p className="partners-description">
           Ми співпрацюємо з провідними страховими компаніями України, щоб запропонувати вам найкращі умови.
         </p>
         
-        <div className="flex flex-wrap justify-center items-center gap-8 md:gap-12">
+        <div className="partners-grid">
           {partners.map((partner, index) => (
-            <div
-              key={index}
-              className="bg-background rounded-lg p-4 shadow-sm hover:shadow-md transition-shadow duration-300"
+            <div 
+              key={index} 
+              className="partner-item"
+              title={partner.name}
             >
-              <img
-                src={partner.url}
-                alt={`${partner.name} - Страхова компанія партнер INSURANCE RR`}
-                className="h-16 md:h-20 w-auto object-contain grayscale hover:grayscale-0 transition-all duration-300"
-              />
+              <div className="logo-container">
+                <img
+                  src={partner.logo}
+                  alt={partner.alt}
+                  loading="lazy"
+                  className={`partner-logo ${partner.className}`}
+                />
+              </div>
             </div>
           ))}
         </div>
