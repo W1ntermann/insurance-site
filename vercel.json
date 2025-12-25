@@ -1,0 +1,48 @@
+{
+  "redirects": [
+    {
+      "source": "/:path((?!_next|public|.*\\..*)*)",
+      "destination": "/:path",
+      "permanent": true,
+      "has": [
+        {
+          "type": "host",
+          "value": "www.insurancerr.space"
+        }
+      ]
+    },
+    {
+      "source": "/:path(.*)",
+      "destination": "https://insurancerr.space/:path",
+      "permanent": true,
+      "has": [
+        {
+          "type": "host",
+          "value": "www.insurancerr.space"
+        }
+      ]
+    },
+    {
+      "source": "/:path(.*)",
+      "destination": "https://insurancerr.space/:path",
+      "permanent": true,
+      "has": [
+        {
+          "type": "protocol",
+          "value": "http"
+        }
+      ]
+    }
+  ],
+  "headers": [
+    {
+      "source": "/(.*)",
+      "headers": [
+        {
+          "key": "Strict-Transport-Security",
+          "value": "max-age=31536000; includeSubDomains"
+        }
+      ]
+    }
+  ]
+}
