@@ -1,17 +1,6 @@
 {
   "redirects": [
     {
-      "source": "/:path((?!_next|public|.*\\..*)*)",
-      "destination": "/:path",
-      "permanent": true,
-      "has": [
-        {
-          "type": "host",
-          "value": "www.insurancerr.space"
-        }
-      ]
-    },
-    {
       "source": "/:path(.*)",
       "destination": "https://insurancerr.space/:path",
       "permanent": true,
@@ -28,10 +17,13 @@
       "permanent": true,
       "has": [
         {
-          "type": "protocol",
-          "value": "http"
+          "type": "host",
+          "value": "insurancerr.space"
         }
-      ]
+      ],
+      "conditions": {
+        "x-forwarded-proto": "http"
+      }
     }
   ],
   "headers": [
