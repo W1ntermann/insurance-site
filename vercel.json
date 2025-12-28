@@ -10,22 +10,6 @@
           "value": "www.insurancerr.space"
         }
       ]
-    },
-    {
-      "source": "/:path(.*)",
-      "destination": "https://insurancerr.space/:path",
-      "permanent": true,
-      "has": [
-        {
-          "type": "host",
-          "value": "insurancerr.space"
-        },
-        {
-          "type": "header",
-          "key": "x-forwarded-proto",
-          "value": "http"
-        }
-      ]
     }
   ]
 }
